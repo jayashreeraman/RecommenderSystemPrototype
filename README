@@ -1,0 +1,37 @@
+Sourced from: https://medium.com/ai-society/a-concise-recommender-systems-tutorial-fa40d5a9c0fa
+
+
+
+
+Euclidean distance score
+The Euclidean distance between two points is the length of the line segments connecting them.
+Our Euclidean space in this particular case is the positive portion of the plane where the axes are the ranked items and the points represent the scores that a particular person gives to both items. 
+Two people belong to a certain preference space if and only if, they have ranked the two items that defines the preference space. 
+So we define a preference space for each pair of distinct items, and the points in this preference space, are given by the people that ranked the two items. 
+To visualize this idea, we consider the preference space, defined by the items Systems programming, and Programming language theory.
+
+We can now proceed to define the distance between two people in the preference space as we define the distance between a pair of points in the plane:
+
+
+If d(Person[i], Person[j]) is small, then Person[i] is similar to Person[j]. 
+
+The closest to one this metric is, the closest Person[i] is to Person[j] by similarity. 
+If we extend this idea to the set of ranked items in common for two people, we can design an algorithm that tells us the similarity of a pair based on their tastes. 
+We just need the common items between two people and get this metric for every common distinct pair. 
+The following algorithm, computes the Euclidean Similarity between two people based on their common tastes. 
+Those tastes are retrieved from our main data structure stored in our data variable.
+
+
+Pearson correlation coefficient
+In statistics, the Pearson correlation coefficient is a measure of the linear dependence or correlation between two variables X and Y. 
+It has a value between +1 and −1 inclusive, where 1 is total positive linear correlation, 0 is no linear correlation, and −1 is total negative linear correlation. 
+In the case of recommender systems, we’re supposed to figure out how related two people are based on the items they both have ranked. 
+The Pearson Correlation Coefficient (PCC) is better understood in this case as a measure of the slope of two datasets related by a single line (we’re not taking into account dimensions).
+
+The PCC algorithm, requires two datasets as inputs, those datasets don’t come from how people ranked the items, but they come from the common ranked items between two people. PCC helps us to find the similarity of a pair of users. 
+Rather than considering the distance between the rankings on two products, we can consider the correlation between the users ratings.
+
+
+Data exploration, and wrangling comes as significant factors while implementing a production recommender system. 
+The more data it can process, the better recommendations we can give our users. 
+While recommender systems theory is much broader, recommender systems is a perfect canvas to explore machine learning, and data mining ideas, algorithms, etc. not only by the nature of the data, but because of the relative ease visualizing and comparing the results.
